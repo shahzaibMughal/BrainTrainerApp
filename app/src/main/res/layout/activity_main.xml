@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.shahzaib.braintrainerapp.MainActivity">
+
+
+    <FrameLayout
+        android:id="@+id/goBtnLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="visible">
+
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:text="GO!"
+            android:textSize="100sp"
+            android:backgroundTint="@color/goBtnColor"
+            android:onClick="playGame"/>
+
+
+    </FrameLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/questionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+
+        <LinearLayout
+            android:id="@+id/timerEquationScoreLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/countdownTimerTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textSize="25sp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@color/countdownTVColor"/>
+
+            <TextView
+                android:id="@+id/equationTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="35sp"
+                android:layout_marginTop="50dp"
+                android:textColor="@color/equationTVColor"
+                android:layout_weight="1"
+
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/scoreTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/scoreTVColor"
+                android:textSize="25sp"
+                android:text="0/0"
+                android:layout_weight="1"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+
+        <GridLayout
+            android:id="@+id/answers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/timerEquationScoreLayout"
+
+            android:rowCount="2"
+            android:columnCount="2">
+
+            <Button
+                android:id="@+id/answer1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:textSize="35sp"
+                android:backgroundTint="@color/answer1Color"
+                android:onClick="checkAnswer"/>
+
+            <Button
+                android:id="@+id/answer2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_column="1"
+                android:layout_row="0"
+                android:textSize="35sp"
+                android:backgroundTint="@color/answer2Color"
+                android:onClick="checkAnswer"/>
+
+            <Button
+                android:id="@+id/answer3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:backgroundTint="@color/answer3Color"
+                android:layout_column="0"
+                android:layout_row="1"
+                android:textSize="35sp"
+                android:onClick="checkAnswer"/>
+
+            <Button
+                android:id="@+id/answer4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:backgroundTint="@color/answer4Color"
+                android:layout_column="1"
+                android:layout_row="1"
+                android:textSize="35sp"
+                android:onClick="checkAnswer"/>
+
+        </GridLayout>
+
+
+        <TextView
+            android:id="@+id/infoTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="35sp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/answers" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/countdownFinishLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="invisible"
+          >
+
+          <TextView
+              android:id="@+id/userScoreTV"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textSize="35sp"
+              android:layout_centerHorizontal="true"
+              android:layout_marginTop="100dp" />
+
+
+          <Button
+              android:id="@+id/playAgainBtn"
+              android:layout_width="150dp"
+              android:layout_height="wrap_content"
+              android:layout_centerHorizontal="true"
+              android:text="Play Again"
+              android:layout_below="@id/userScoreTV"
+              android:layout_marginTop="20dp"
+              android:onClick="playAgain"/>
+
+          <Button
+              android:id="@+id/quiteBtn"
+              android:layout_width="150dp"
+              android:layout_height="wrap_content"
+              android:layout_centerHorizontal="true"
+              android:layout_below="@+id/playAgainBtn"
+              android:text="Quite"
+              android:onClick="quiteGame"/>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
